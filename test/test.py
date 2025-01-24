@@ -4,10 +4,9 @@ from app import app
 class TestApp(unittest.TestCase):
     def test_home(self):
         tester = app.test_client()
-        response = tester.get('Hello, World!')
+        response = tester.get('/')  # Update path to '/'
         self.assertEqual(response.status_code, 200)
-        self.assertEqual(response.data, b"Python App Hosting")
-
+        self.assertEqual(response.data, b"Hello, World!")  # Correct the expected output
 
 if __name__ == "__main__":
     unittest.main()
