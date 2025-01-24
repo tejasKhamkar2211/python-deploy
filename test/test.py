@@ -4,7 +4,7 @@ from app import app
 class TestApp(unittest.TestCase):
     def test_home(self):
         tester = app.test_client()
-        response = tester.get('/')
+        response = tester.get('Hello, World!')
         self.assertEqual(response.status_code, 200)
         self.assertEqual(response.data, b"Python App Hosting")
 
