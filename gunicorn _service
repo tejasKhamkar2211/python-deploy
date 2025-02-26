@@ -1,0 +1,13 @@
+[Unit]
+Description=Gunicorn instance for pythonapp
+After=network.target
+
+[Service]
+User=ubuntu
+Group=ubuntu
+WorkingDirectory=/home/ubuntu/pythonapp
+Environment="PATH=/home/ubuntu/pythonapp/tejenv/bin"
+ExecStart=/home/ubuntu/pythonapp/tejenv/bin/gunicorn --workers 3 --bind 0.0.0.0:5000 app:app
+
+[Install]
+WantedBy=multi-user.target
