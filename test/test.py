@@ -4,7 +4,7 @@ from app import app
 class TestApp(unittest.TestCase):
     def test_home(self):
         tester = app.test_client()
-        response = tester.get('hello world')  # Update path to '/'
+        response = tester.get('/')  # Update path to '/'
         self.assertEqual(response.status_code, 200)
         self.assertEqual(response.data, b"123check")  # Correct the expected output
 
